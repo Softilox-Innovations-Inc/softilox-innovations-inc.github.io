@@ -2,6 +2,8 @@
 // light/dark screenshots, table of contents highlight. ~3 KB, no libraries.
 (() => {
   const d = document, root = d.documentElement;
+  // never run inside someone else's frame (clickjacking); GitHub Pages can't send frame-ancestors
+  if (window.top !== window.self) { try { window.top.location = window.location.href; } catch { d.documentElement.style.display = "none"; } return; }
   root.classList.add("js");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
