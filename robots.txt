@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /play-assets/
+
+Sitemap: https://softilox-innovations-inc.github.io/sitemap.xml
